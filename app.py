@@ -15,22 +15,25 @@ from backend import (
 )
 
 # ---------- CONFIGURACIÓN BÁSICA ----------
+# --------------------------
+# ENCABEZADO / PORTADA
+# --------------------------
+
 st.set_page_config(
-    page_title="Calculadora académica de gadolinio – RM",
+    page_title="Calculadora de Gadolinio",
     layout="centered",
 )
 
-st.title("Calculadora académica de gadolinio para RM")
-st.caption("Uso exclusivamente docente. No utilizar para decisiones clínicas reales.")
+st.title("Calculadora de Gadolinio")
 
-st.markdown(
-    """
-**Fórmula base**  
-\\[
-\\text{Volumen (mL)} = \\frac{0{,}1 \\;\\text{mmol/kg} \\times \\text{peso (kg)}}{\\text{concentración (mmol/mL)}}
-\\]
-""",
+# (Aviso eliminado — queda en blanco)
+
+# ---- Fórmula bonita ----
+st.markdown("### Fórmula base")
+st.latex(
+    r" \text{Volumen (mL)} = \frac{0.1 \,\text{mmol/kg} \times \text{peso (kg)}}{\text{concentración (mmol/mL)}} "
 )
+
 
 st.divider()
 
@@ -62,7 +65,7 @@ farmaco = st.selectbox("Fármaco", options=opciones_farmaco, index=0)
 col3, col4 = st.columns(2)
 with col3:
     insuf_renal_str = st.radio(
-        "¿Tiene problemas renales significativos?",
+        "¿Tiene problemas renales? Ej: ERC avanzada, diálisis, etc",
         options=["No", "Sí"],
         index=0,
         help="Ej.: ERC avanzada, TFG < 30 mL/min, diálisis.",
@@ -158,5 +161,6 @@ if st.button("Calcular volumen de gadolinio"):
         )
 else:
     st.info("Complete los datos y presione **Calcular volumen de gadolinio**.")
+
 
 
