@@ -44,10 +44,10 @@ col1, col2 = st.columns(2)
 
 with col1:
     nombre = st.text_input("Nombre completo", value="")
-    edad = st.number_input("Edad (años)", min_value=0, max_value=120, value=5, step=1)
+    edad = st.number_input("Edad (años)", min_value=0, max_value=120, value= 25, step=1)
 
 with col2:
-    peso = st.number_input("Peso (kg)", min_value=0.0, max_value=300.0, value=20.0, step=0.5)
+    peso = st.number_input("Peso (kg)", min_value=0.0, max_value=300.0, value=50.0, step=0.5)
 
 estudio = st.text_input("Estudio (ej: RM cerebral)", value="")
 tecnica = st.text_input("Técnica (ej: T1 con gadolinio)", value="")
@@ -156,11 +156,12 @@ if st.button("Calcular volumen de gadolinio"):
                 st.write(f"- {a}")
 
         st.info(
-            "Prototipo educativo. La indicación real de contraste depende del tecnólogo médico "
+            "La indicación real de contraste depende del tecnólogo médico "
             "a cargo y de los protocolos institucionales."
         )
 else:
     st.info("Complete los datos y presione **Calcular volumen de gadolinio**.")
+
 
 
 
