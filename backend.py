@@ -14,11 +14,11 @@ from typing import Dict, Any
 # Datos de fármacos y concentraciones
 # ---------------------------------------
 GAD_FARMACOS: Dict[str, Dict[str, Any]] = {
-    "Dotarem 0.5":  {"concentracion": 0.5, "pediatrico_permitido": True},
-    "Omniscan 0.5": {"concentracion": 0.5, "pediatrico_permitido": False},
-    "Prohance 0.5": {"concentracion": 0.5, "pediatrico_permitido": True},
-    "Gadovist 1.0": {"concentracion": 1.0, "pediatrico_permitido": True},
-    "Gadavist 1.0": {"concentracion": 1.0, "pediatrico_permitido": True},
+    "Dotarem 0.5 mmol/ml":  {"concentracion": 0.5, "pediatrico_permitido": True},
+    "Omniscan 0.5 mmol/ml": {"concentracion": 0.5, "pediatrico_permitido": False},
+    "Prohance 0.5 mmol/ml": {"concentracion": 0.5, "pediatrico_permitido": True},
+    "Gadovist 1.0 mmol/ml": {"concentracion": 1.0, "pediatrico_permitido": True},
+    "Gadavist 1.0 mmol/ml": {"concentracion": 1.0, "pediatrico_permitido": True},
 }
 
 DOSIS_ESTANDAR_MMOL_KG = 0.1  # RM estándar
@@ -125,6 +125,7 @@ def procesar_paciente(p: PatientInput) -> Dict[str, Any]:
         )
 
     return resultado
+
 
 
 
